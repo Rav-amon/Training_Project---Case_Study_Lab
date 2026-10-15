@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    env_file:
+      - .env
+    ports:
+      # Публикация только для локальной проверки.
+      - "8000:8000"
+    environment:
+      DATABASE_PATH: /app/data/triage.db
+    volumes:
+      - ./data:/app/data
